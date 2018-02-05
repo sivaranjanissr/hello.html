@@ -1,0 +1,60 @@
+<!DOCTYPE html><html>
+<head>
+<script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="shop" ng-controller="cntl">
+name:<input type ="text" ng-model="name"><br><br>
+age:<input type ="text" ng-model="age"><br><br>
+<h2>hie: {{names()}} </h2>
+customer: <br>
+regular:<input type="radio" ng-model="regular" value="reg">
+new:<input type="radio" ng-model="new" value="ne">
+<div ng-switch="regular">
+<div ng-switch-when="reg">
+<h2>happy to see you back</h2>
+</div>
+<div ng-switch="new"> 
+<div ng-switch-when="ne">
+<h2>welcome to our shop</h2>
+</div>
+item:<br>
+<select class="item" ng-model="items">
+<option selected disabled value>select type of item</option>
+<option value="gro">grocery</option>
+<option value="cos">cosmetics</option>
+</select>
+<div ng-switch="items">
+<div ng-switch-when="gro">
+<h2>welcome to grocery</h2>
+</div>
+<div ng-switch="items">
+<div ng-switch-when="cos">
+<h2>welcome to cosmetics</h2></div>
+mode of pay:<br><br>
+cash:<input type="checkbox" ng-model="cash" value="ca">
+card:<input type="checkbox" ng-model="card" value="rd">
+<div ng-switch="cash">
+    <div ng-switch-when="ca">
+        <h4>give exact change!!!</h4>
+</div>
+<div ng-switch="card">
+    <div ng-switch-when="rd">
+<h4>enter pin number</h4>
+    </div>
+</div>
+<script>
+angular.module("shop",[]).controller("cntl",function($scope){
+$scope.name="";
+$scope.age="";
+ $scope.customer="";
+ $scope.item="";
+ $scope.cash="";
+ $scope.card="";
+ $scope.names=function(){
+ return $scope.name + $scope.age;
+ };
+});
+</script>
+</body>
+</html>
