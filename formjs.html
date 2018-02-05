@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function getval(){
+var fname=document.form1.Firstname.value;
+var lname=document.form1.lastname.value;
+document.getElementById("mes").innerHTML="First name:" + fname + "last name:" + lname;
+alert(fname);}
+</script>
+<style>
+body{background-image:url("file:///C:/Users/user/Desktop/placement/IMG_20170606_103629.jpg");}
+</style>
+</head>
+<body>
+<form action="#" name="form1">
+<fieldset>
+<legend>Application form</legend>
+First name:<input type="text" placeholder="First name" name="Firstname"><br>
+last name:<input type="text" placeholder="Last name" name="lastname" required><br>
+<br>
+
+Address:<textarea name="address" rows="2" cols="20"></textarea>
+<br>
+Gender:<br>
+<br>
+male:<input type="checkbox" name="select">
+Female:<input type="checkbox" name="select"><br>
+<br>
+courses:<br>
+Bsc:<input type="radio" checked >
+Msc:<input type="radio" ><br><br>
+country:<select name="country">
+<option value="India">India</option>
+<option value="Africa">Africa</option>
+<option value="US">US</option>
+</select><br>
+engineering courses:<select>
+<optgroup label="IT stream">
+<option value="CSE">CSE</option value>
+<option value="IT">IT</option value>
+</optgroup>
+<optgroup label="other stream">
+<option value="mech">mech</option value>
+<option value="ECE">ECE</option value>
+</optgroup>
+</select><br>
+<br><input type="submit" onclick="getval();return false">
+<input type="button" value="cancel" onclick="location.href='webmarquee.html'">
+
+<p id="mes"></p>
+<marquee style="color:red"><b><h1>hurry up!!!</h1><b></marquee>
+<button type="button"onclick="alert('welcome')">click me</button>
+</fieldset>
+</form>
+</body>
+</html>

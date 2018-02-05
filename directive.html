@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js">
+</script>
+<body ng-app="mine">
+<directive></directive>
+<script>
+var app = angular.module("mine",[]);
+app.directive("directive",function(){
+    return{template : "<p>directive made</p>"};
+});
+</script>
+</body>
+</html>
