@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> angular</title>
+<script src="angular.min.js"></script>
+</head>
+<body>
+<h1>APPLICATION</h1>
+<div ng-app="form" ng-controller="myctl" ng-init="color='pink'">
+    <input style ="background-color:{{color}}" ng-model="color" placeholder="enter your color"><br><br>
+firstname:<input type="text" ng-model="firstname" <input style ="background-color:{{color}}" ng-model="color"><br>
+lastname:<input type="text" ng-model="lastname"<input style ="background-color:{{color}}" ng-model="color"><br>
+address:<input type="text" ng-model="address"<input style ="background-color:{{color}}" ng-model="color"><br>
+gender:male:<input type="checkbox" ng-model="male"<input style ="background-color:{{color}}" ng-model="color"><br>
+female:<input type="checkbox" ng-model="female"<input style ="background-color:{{color}}" ng-model="color"><br>
+department:
+fullname:{{firstname + " " + lastname + address + male + female}}
+
+</div>
+<script>
+angular.module("form",[]).controller("myctl",function($scope)
+    {
+        $scope.firstname=" ";
+        $scope.lastname=" ";
+        $scope.address=" ";
+        $scope.male=" ";
+        $scope.female=" ";
+        $scope.fullname=function(){
+            return $scope.firstname + " " + $scope.lastname + $scope.address+$scope.male+$scope.female;
+        }
+    });</script>
+</body>
+</html>
