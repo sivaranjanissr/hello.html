@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> angular</title>
+<script src="angular.min.js"></script>
+</head>
+<body>
+<h1>APPLICATION</h1>
+<div ng-app="form" ng-controller="myctl">
+firstname:<input type="text" ng-model="firstname"><br>
+lastname:<input type="text" ng-model="lastname"><br>
+address:<input type="text" ng-model="address"><br>
+gender:male:<input type="checkbox" ng-model="male"><br>
+female:<input type="checkbox" ng-model="female"><br>
+department:
+fullname:{{firstname + " " + lastname + address + male + female}}
+
+</div>
+<script>
+angular.module("form",[]).controller("myctl",function($scope,$timeout)
+    {
+        $scope.firstname="";
+        $scope.lastname=" ";
+        $scope.address=" ";
+        $scope.male=" ";
+        $scope.female=" ";
+        $scope.fullname=function(){
+            return $scope.firstname + " " + $scope.lastname + $scope.address+$scope.male+$scope.female;
+        }
+        $timeout(function(){
+                   $scope.firstname="please enter the firstname";
+                   $scope.lastname="please enter the lastname";
+                   $scope.address="please enter the address";
+    },2000);
+    });</script>
+</body>
+</html>
